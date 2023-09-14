@@ -22,7 +22,7 @@ namespace ApiØvelse.Controllers
 
         // GET: api/Games
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<GameDTO>>> GetGameInfo()
+        public async Task<ActionResult<IEnumerable<GameDTO>>> GetGameInfo() //works
         {
           if (_context.GameInfo == null)
           {
@@ -41,7 +41,7 @@ namespace ApiØvelse.Controllers
 
         // GET: api/Games/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Game>> GetGame(string id)
+        public async Task<ActionResult<Game>> GetGame(int id) //works
         {
           if (_context.GameInfo == null)
           {
@@ -60,7 +60,7 @@ namespace ApiØvelse.Controllers
         // PUT: api/Games/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutGame(string id, Game game)
+        public async Task<IActionResult> PutGame(string id, Game game) //doesnt work yet
         {
             if (id != game.Title)
             {
@@ -91,7 +91,7 @@ namespace ApiØvelse.Controllers
         // POST: api/Games
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Game>> PostGame([ FromBody] GameDTO game)
+        public async Task<ActionResult<Game>> PostGame([FromBody] GameDTO game) //works
         {
             if (_context.GameInfo == null)
             {
@@ -112,7 +112,7 @@ namespace ApiØvelse.Controllers
 
         // DELETE: api/Games/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteGame(string id)
+        public async Task<IActionResult> DeleteGame(int id) //works
         {
             if (_context.GameInfo == null)
             {
